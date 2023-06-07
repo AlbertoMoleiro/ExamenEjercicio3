@@ -15,4 +15,8 @@ export class AutobusesService {
     getAutobuses():Observable<any>{
       return this.http.get('http://localhost:8080/autobuses/all');
     }
+
+    getAutobus(matricula:string):Observable<any>{
+      return this.http.get('http://localhost:8080/autobuses/'+matricula);
+    }
 }

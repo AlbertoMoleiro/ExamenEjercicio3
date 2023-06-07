@@ -7,7 +7,17 @@ export interface Autobus {
 interface Visitas {
   id:number;
   fecha:Date;
-  matricula:string;
+  matricula:Autobus;
+  dni:Conductor;
+  lugar:Lugar;
+}
+
+interface Conductor {
   dni:string;
+  nombre:string;
+}
+
+interface Lugar {
   idLugar:number;
+  nombre:string;
 }

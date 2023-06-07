@@ -9,13 +9,12 @@ import { Autobus } from '../model/autobus.interface';
 })
 export class ListaAutobusesComponent {
 
-  autobuses:Autobus[] = [];
+  autobus:Autobus={matricula:'',aFabricacion:0,visitas:[]};
   constructor(private autobusService:AutobusesService) {
-    this.autobusService.getAutobuses().subscribe(
-      (data:Autobus[]) => {
-        this.autobuses = data;
-      }
-    )
+   this.autobusService.getAutobus('12345AA').subscribe(
+      data => {
+        this.autobus = data;
+      });
    }
 
 }
